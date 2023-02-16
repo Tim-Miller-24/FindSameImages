@@ -12,7 +12,9 @@ namespace FindSameImages
         {
             List<string> images = new List<string>();
             Dictionary<string, string> imageHashes = new Dictionary<string, string>();
-
+            
+            Console.WriteLine("Я дурачок!");
+            
             while (true)
             {
                 GetImages(images);
