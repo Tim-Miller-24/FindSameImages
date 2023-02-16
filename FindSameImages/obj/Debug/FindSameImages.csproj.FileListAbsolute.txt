@@ -1,0 +1,7 @@
+D:\Develop\С#\Console\FindSameImages\FindSameImages\bin\Debug\FindSameImages.exe.config
+D:\Develop\С#\Console\FindSameImages\FindSameImages\bin\Debug\FindSameImages.exe
+D:\Develop\С#\Console\FindSameImages\FindSameImages\bin\Debug\FindSameImages.pdb
+D:\Develop\С#\Console\FindSameImages\FindSameImages\obj\Debug\FindSameImages.csprojAssemblyReference.cache
+D:\Develop\С#\Console\FindSameImages\FindSameImages\obj\Debug\FindSameImages.csproj.CoreCompileInputs.cache
+D:\Develop\С#\Console\FindSameImages\FindSameImages\obj\Debug\FindSameImages.exe
+D:\Develop\С#\Console\FindSameImages\FindSameImages\obj\Debug\FindSameImages.pdb
