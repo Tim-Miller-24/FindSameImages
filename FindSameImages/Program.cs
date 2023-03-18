@@ -13,42 +13,39 @@ namespace FindSameImages
             List<string> images = new List<string>();
             Dictionary<string, string> imageHashes = new Dictionary<string, string>();
 
-            while (true)
-            {
-                GetImages(images);
+            GetImages(images);
 
-                HashImages(images, imageHashes);
+            HashImages(images, imageHashes);
 
-                ContainsSameImages(imageHashes);
+            ContainsSameImages(imageHashes);
 
-                ClearData(images, imageHashes);
-
-                Console.WriteLine("\n");
-            }
+            Console.WriteLine("\n");
         }
 
         static void GetImages(List<string> images)
         {
-            List<string> myFiles = new List<string>();
-            try
-            {
-                Console.WriteLine("Введите путь до папки с картинками");
-                string path = $@"{Console.ReadLine()}";
+            List<string> folders = new List<string>();
 
-                string[] files = Directory.GetFiles(path);
+            string path = "";
 
-                myFiles = files.ToList();
-            }
-            catch (Exception)
+            while (!Directory.Exists(path))
             {
-                Console.WriteLine("Некорректный путь \n");
-                GetImages(images);
+                Console.WriteLine("Введите путь до корневой папки");
+                path = Console.ReadLine();
+
             }
 
-            foreach (var file in myFiles)
+            folders.Add(path);
+            folders = Directory.GetDirectories(path, "*", SearchOption.AllDirectories).ToList();
+
+            for (int i = 0; i < folders.Count; i++)
             {
-                images.Add(file);
+                foreach (var file in Directory.GetFiles(folders[i]))
+                {
+                    images.Add(file);
+                }
             }
+
         }
 
         static void HashImages(List<string> images, Dictionary<string, string> imageHashes)
@@ -74,12 +71,6 @@ namespace FindSameImages
                 var message = $"Одинаковые картинки: {keys}";
                 Console.WriteLine(message);
             }
-        }
-
-        static void ClearData(List<string> images, Dictionary<string, string> imageHashes)
-        {
-            images.Clear();
-            imageHashes.Clear();
         }
     }
 }
